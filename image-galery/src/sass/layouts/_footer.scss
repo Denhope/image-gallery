@@ -1,0 +1,56 @@
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  min-height: 150px;
+
+  @include media-tablet {
+    flex-direction: column;
+    padding: 28px 0;
+    min-height: 190px;
+  }
+
+  @include media-mobile {
+    flex-wrap: wrap;
+  }
+}
+
+.footer__data {
+  display: flex;
+  justify-content: space-between;
+  gap: 21px;
+  margin: 0;
+  @include media-tablet {
+  }
+
+  @include media-mobile {
+    padding: 0px;
+    align-items: center;
+  }
+}
+
+.copyright-rs,
+.github {
+  a {
+    @include font(2rem, 5rem, $wight: 400);
+    @extend %font-add;
+    @extend %transition;
+    &:hover {
+      color: $color-primery;
+    }
+    @include media-tablet {
+      line-height: 2.4rem;
+    }
+  }
+}
+
+.copyright-rs[data-theme="light"],
+.github[data-theme="light"] {
+  a {
+    color: $color-text-light;
+    &:hover {
+      color: $color-primery;
+    }
+  }
+}
