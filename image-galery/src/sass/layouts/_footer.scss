@@ -30,11 +30,26 @@
   }
 }
 
+.social {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  cursor: pointer;
+  a {
+    &:hover {
+      @extend %transition;
+      filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg)
+        brightness(92%) contrast(87%);
+    }
+  }
+}
+
 .copyright-rs,
 .github {
   a {
     @include font(2rem, 5rem, $wight: 400);
-    @extend %font-add;
+    @extend %font;
     @extend %transition;
     &:hover {
       color: $color-primery;

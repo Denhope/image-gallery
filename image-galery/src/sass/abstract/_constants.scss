@@ -1,0 +1,33 @@
+$orange: #bdae82;
+$white: #ffffff;
+$black: #000000;
+$blackMat: #1c1c1c;
+
+//dark theme//
+$color-primery: $orange;
+$color-background: $black;
+$color-text: $white;
+$color-section-title: $orange;
+$color-active-btn: $black;
+$color-hovered-btn: $white;
+
+// light theme//
+$color-primery-light: $orange;
+$color-hamburger-light: $black;
+$color-background-light: $white;
+$color-text-light: $blackMat;
+$color-hovered-light: $orange;
+$color-hovered-active-light: $orange;
+$color-background-btn-light: $orange;
+$color-background-btn-active-light: $blackMat;
+$color-text-btn-active-light: $orange;
+$color-link-light: $black;
+$color-linkActive-light: $white;
+
+// width//
+$content-width: 1440px;
+$content-width-620: 620px;
+$laptop-width: 1024px;
+$tablet-width: 768px;
+$mobile-big-width: 426px;
+$mobile-small-width: 320px;

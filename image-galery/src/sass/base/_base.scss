@@ -1,0 +1,47 @@
+html {
+  font-size: 10px;
+  background-color: $color-text-light;
+  scroll-behavior: smooth;
+}
+
+html[data-theme="light"] {
+  background-color: $color-text;
+}
+
+.transition,
+.transition *,
+.transition *:before,
+.transition *:after {
+  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 420ms !important;
+  transition-delay: 0 !important;
+}
+
+body {
+  font-size: 1.6rem;
+  @extend %font;
+}
+
+h2 {
+  margin: 0;
+  @include font(4rem, 8rem);
+  @extend %font;
+  text-align: center;
+  @include media-tablet {
+    @include font(3.2rem, 4rem);
+  }
+}
+
+p {
+  @include font(2rem, 5rem, $wight: 400);
+  @extend %font;
+  text-align: center;
+  margin: 0;
+  @include media-tablet {
+    line-height: 2.4rem;
+  }
+}
+
+h2[data-theme="light"],
+p[data-theme="light"] {
+  color: $color-text-light;
+}
