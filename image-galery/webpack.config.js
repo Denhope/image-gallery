@@ -62,12 +62,12 @@ module.exports = (env, options) => {
       new MiniCssExtractPlugin({
         filename: "style.css",
       }),
-      new CopyPlugin({
-        patterns: [
-          { from: "./src/assets/img", to: "./assets/img" },
-          // { from: "./src/assets/image/", to: "./assets/image" },
-        ],
-      }),
+      // new CopyPlugin({
+      //   patterns: [
+      //     { from: "./src/assets/img", to: "./assets/img" },
+      //     // { from: "./src/assets/image/", to: "./assets/image" },
+      //   ],
+      // }),
     ],
     // ...devServer()
   };
