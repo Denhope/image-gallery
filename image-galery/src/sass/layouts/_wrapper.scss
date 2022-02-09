@@ -5,11 +5,11 @@
 
   @include media-tablet {
     max-width: $tablet-width;
-    padding: 0px;
+    // padding: 0 10px;
   }
 
   @include media-mobile {
     max-width: $mobile-big-width;
-    padding: 0 10px;
+    // padding: 0 10px;
   }
 }

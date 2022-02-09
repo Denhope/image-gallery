@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   min-height: 150px;
-  column-gap: 20px;
+  column-gap: 10px;
   background: linear-gradient(171deg, #280228, #1c1c1c 81%);
   @include media-mobile {
     align-items: stretch;
@@ -26,14 +26,36 @@
     }
   }
 }
+.search {
+  border-radius: 15px;
+  height: 35px;
+  border: #1c1c1c;
+  &:focus {
+    border-color: $color-text-light;
+  }
+}
 .search-block {
   display: block;
   position: relative;
+  i {
+    position: absolute;
+    cursor: pointer;
+    top: 10%;
+    right: 5%;
+    transition: 0.5s;
+  }
+}
+.fa-search {
+  &:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    color: $color-text-light;
+  }
 }
 
 .search-error {
   position: absolute;
-  top: 30px;
+  top: 40px;
   @include font(1.6rem, 2rem, $wight: 400);
   @extend %font;
   @extend %transition;
