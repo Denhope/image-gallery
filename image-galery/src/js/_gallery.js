@@ -2,6 +2,7 @@ export function init() {
   //set constants
   const clientId = "Itnk5iSBAH9zF0tGrA7AukZxbNHshJ5Nq4EbhRkZVr4";
   const search = document.querySelector(".search");
+  const submit = document.querySelector(".fas");
   const searchError = document.querySelector(".search-error");
   const galleryContainer = document.querySelector(".gallery__wrapper");
   const requestURL = `https://api.unsplash.com/search/photos?query=california&per_page=30&orientation=landscape&client_id=${clientId}`;
@@ -51,4 +52,5 @@ export function init() {
   //set listener
   search.addEventListener("change", changePicture);
   search.addEventListener("keypress", showError);
+  submit.addEventListener("click", changePicture);
 }
