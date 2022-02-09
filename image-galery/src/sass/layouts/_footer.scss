@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 20px;
-  // min-height: 150px;
   background-color: #280228;
 
   @include media-tablet {
@@ -48,7 +47,6 @@
 .copyright-rs,
 .github {
   a {
-    // width: 120px;
     @include font(2rem, 5rem, $wight: 400);
     @extend %font;
     @extend %transition;
