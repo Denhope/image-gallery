@@ -1,30 +1,11 @@
-$orange: #bdae82;
+// colors//
 $white: #ffffff;
 $black: #000000;
 $blackMat: #1c1c1c;
 $hover: invert(0%) sepia(6%) saturate(1898%) hue-rotate(316deg) brightness(70%)
   contrast(78%);
-
-//dark theme//
-$color-primery: $orange;
-$color-background: $black;
 $color-text: $white;
-$color-section-title: $orange;
-$color-active-btn: $black;
-$color-hovered-btn: $white;
-
-// light theme//
-$color-primery-light: $orange;
-$color-hamburger-light: $black;
-$color-background-light: $white;
 $color-text-light: $blackMat;
-$color-hovered-light: $orange;
-$color-hovered-active-light: $orange;
-$color-background-btn-light: $orange;
-$color-background-btn-active-light: $blackMat;
-$color-text-btn-active-light: $orange;
-$color-link-light: $black;
-$color-linkActive-light: $white;
 
 // width//
 $content-width: 1440px;
