@@ -4,7 +4,7 @@ export function init() {
   const search = document.querySelector(".search");
   const searchError = document.querySelector(".search-error");
   const galleryContainer = document.querySelector(".gallery__wrapper");
-  const requestURL = `https://api.unsplash.com/search/photos?query=spring&per_page=30&orientation=landscape&client_id=${clientId}`;
+  const requestURL = `https://api.unsplash.com/search/photos?query=california&per_page=30&orientation=landscape&client_id=${clientId}`;
   //functions
   async function getData(url) {
     try {

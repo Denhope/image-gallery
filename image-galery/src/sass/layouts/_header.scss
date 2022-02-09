@@ -29,9 +29,12 @@
 .search {
   border-radius: 15px;
   height: 35px;
-  border: #1c1c1c;
+  border: $color-text-light;
+}
+.search {
   &:focus {
     border-color: $color-text-light;
+    @extend %transition;
   }
 }
 .search-block {
@@ -40,7 +43,7 @@
   i {
     position: absolute;
     cursor: pointer;
-    top: 10%;
+    top: 17%;
     right: 5%;
     transition: 0.5s;
   }
