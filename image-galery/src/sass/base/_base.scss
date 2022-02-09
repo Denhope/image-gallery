@@ -4,10 +4,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html[data-theme="light"] {
-  background-color: $color-text;
-}
-
 .transition,
 .transition *,
 .transition *:before,
@@ -39,9 +35,4 @@ p {
   @include media-tablet {
     line-height: 2.4rem;
   }
-}
-
-h2[data-theme="light"],
-p[data-theme="light"] {
-  color: $color-text-light;
 }

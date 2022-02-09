@@ -16,27 +16,27 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  cursor: pointer;
+  // cursor: pointer;
   @extend %transition;
   img {
+    fill: #1c1c1c;
     &:hover {
       @extend %transition;
-      filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg)
-        brightness(92%) contrast(87%);
+      filter: $hover;
     }
   }
 }
 .search {
+  padding: 0 20px;
   border-radius: 15px;
   height: 35px;
   border: $color-text-light;
-}
-.search {
   &:focus {
     border-color: $color-text-light;
     @extend %transition;
   }
 }
+
 .search-block {
   display: block;
   position: relative;
@@ -53,6 +53,10 @@
     content: "\f002";
     font-family: FontAwesome;
     color: $color-text-light;
+  }
+  &:hover {
+    @extend %transition;
+    filter: $hover;
   }
 }
 

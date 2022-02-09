@@ -15,6 +15,13 @@
   border-radius: 2%;
   cursor: pointer;
   transition: 1s;
+  &:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    box-shadow: 1px 0px 10px 10px rgb(16 17 17 / 35%);
+  }
+
   @include media-tablet {
     width: 100%;
     height: auto;
