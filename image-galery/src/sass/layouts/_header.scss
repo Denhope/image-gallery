@@ -1,7 +1,14 @@
 .header__wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
+  min-height: 150px;
+  column-gap: 20px;
+  background: linear-gradient(171deg, #280228, #1c1c1c 81%);
+  @include media-mobile {
+    align-items: stretch;
+  }
 }
 
 .logo {
@@ -18,4 +25,16 @@
         brightness(92%) contrast(87%);
     }
   }
+}
+.search-block {
+  display: block;
+  position: relative;
+}
+
+.search-error {
+  position: absolute;
+  top: 30px;
+  @include font(1.6rem, 2rem, $wight: 400);
+  @extend %font;
+  @extend %transition;
 }
