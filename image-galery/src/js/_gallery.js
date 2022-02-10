@@ -58,7 +58,7 @@ export function init() {
     let bigImg = this.appendChild(document.createElement("DIV"));
     bigImg.style.background = `center / 100% 100% no-repeat url('${evt.target.currentSrc}')`;
     const close = '<div class="close">×</div>';
-    bigImg.insertAdjacentHTML("beforeend", close);
+    // bigImg.insertAdjacentHTML("beforeend", close);
 
     bigImg.addEventListener("click", function () {
       this.addEventListener("transitionend", function () {
