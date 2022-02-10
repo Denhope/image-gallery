@@ -5,6 +5,8 @@ export function init() {
   const submit = document.querySelector(".fas");
   const searchError = document.querySelector(".search-error");
   const galleryContainer = document.querySelector(".gallery__wrapper");
+  const closeButton = document.querySelector(".close");
+
   const requestURL = `https://api.unsplash.com/search/photos?query=california&per_page=30&orientation=landscape&client_id=${clientId}`;
   //functions//
   async function getData(url) {
@@ -46,10 +48,33 @@ export function init() {
       console.log(search.value);
     }
   };
-  getData(requestURL);
 
+  //view picture functions
+  function viewPicture(evt) {
+    if (evt.target.tagName != "IMG") {
+      return false;
+    }
+    let bigImg = this.appendChild(document.createElement("DIV"));
+    bigImg.style.background = `center / 100% 100% no-repeat url('${evt.target.currentSrc}')`;
+    const close = '<div class="close">×</div>';
+    bigImg.insertAdjacentHTML("beforeend", close);
+
+    bigImg.addEventListener("click", function () {
+      this.addEventListener("transitionend", function () {
+        this.remove();
+      });
+      this.style.height = this.style.width = `0px`;
+      // bigImg.classList.toggle("active");
+      galleryContainer.classList.toggle("show");
+    });
+    bigImg.classList.toggle("active");
+    galleryContainer.classList.toggle("show");
+  }
+
+  getData(requestURL);
   //set listener
   search.addEventListener("change", changePicture);
   search.addEventListener("keypress", showError);
   submit.addEventListener("click", changePicture);
+  galleryContainer.addEventListener("click", viewPicture);
 }
