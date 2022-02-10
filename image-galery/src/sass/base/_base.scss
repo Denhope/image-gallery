@@ -17,6 +17,10 @@ body {
   @extend %font;
 }
 
+.body_lock {
+  overflow: hidden;
+}
+
 h2 {
   margin: 0;
   @include font(4rem, 8rem);

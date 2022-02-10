@@ -6,6 +6,7 @@ export function init() {
   const searchError = document.querySelector(".search-error");
   const galleryContainer = document.querySelector(".gallery__wrapper");
   const closeButton = document.querySelector(".close");
+  const body = document.querySelector("body");
 
   const requestURL = `https://api.unsplash.com/search/photos?query=california&per_page=30&orientation=landscape&client_id=${clientId}`;
   //functions//
@@ -66,9 +67,11 @@ export function init() {
       this.style.height = this.style.width = `0px`;
       // bigImg.classList.toggle("active");
       galleryContainer.classList.toggle("show");
+      body.classList.toggle("body_lock");
     });
     bigImg.classList.toggle("active");
     galleryContainer.classList.toggle("show");
+    body.classList.toggle("body_lock");
   }
 
   getData(requestURL);
