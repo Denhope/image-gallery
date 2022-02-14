@@ -1,11 +1,12 @@
 export function init() {
   //set constants//
   const clientId = "Itnk5iSBAH9zF0tGrA7AukZxbNHshJ5Nq4EbhRkZVr4";
-  const search = document.querySelector(".search");
+  const search = document.querySelector(".search-app");
   const submit = document.querySelector(".fas");
   const searchError = document.querySelector(".search-error");
   const galleryContainer = document.querySelector(".gallery__wrapper");
   const closeButton = document.querySelector(".close");
+  const cleanButton = document.querySelector(".fa-xmark");
   const body = document.querySelector("body");
 
   const requestURL = `https://api.unsplash.com/search/photos?query=california&per_page=30&orientation=landscape&client_id=${clientId}`;
@@ -15,11 +16,11 @@ export function init() {
       const res = await fetch(url);
       const data = await res.json();
       if (data.total > 0) {
-        console.log(data.total);
+        // console.log(data.total);
         searchError.textContent = "";
         showData(data);
       } else {
-        searchError.textContent = `Error! Picture '${search.value}' not found, pleese try again!`;
+        searchError.textContent = `Picture '${search.value}' not found, please try again!`;
       }
     } catch (err) {
       console.log(err);
@@ -34,19 +35,20 @@ export function init() {
     });
   };
 
-  const showError = (evt) => {
+  const readRequest = (evt) => {
     if (evt.code === "Enter" && search.value.length == 0) {
-      searchError.textContent = `Error! Enter somthing, please!`;
+      searchError.textContent = `Enter something, please!`;
+    } else if (evt.code === "Enter" && search.value.length !== 0) {
+      changePicture();
+    } else if (evt.target === submit) {
+      console.log("gecnjq");
     }
   };
 
   const changePicture = (evt) => {
     const searchURL = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&orientation=landscape&client_id=${clientId}`;
-    evt.preventDefault();
     if (search.value) {
       getData(searchURL);
-      console.log(searchURL);
-      console.log(search.value);
     }
   };
 
@@ -57,15 +59,12 @@ export function init() {
     }
     let bigImg = this.appendChild(document.createElement("DIV"));
     bigImg.style.background = `center / 100% 100% no-repeat url('${evt.target.currentSrc}')`;
-    const close = '<div class="close">×</div>';
-    // bigImg.insertAdjacentHTML("beforeend", close);
 
     bigImg.addEventListener("click", function () {
       this.addEventListener("transitionend", function () {
         this.remove();
       });
       this.style.height = this.style.width = `0px`;
-      // bigImg.classList.toggle("active");
       galleryContainer.classList.toggle("show");
       body.classList.toggle("body_lock");
     });
@@ -75,9 +74,15 @@ export function init() {
   }
 
   getData(requestURL);
+
   //set listener
-  search.addEventListener("change", changePicture);
-  search.addEventListener("keypress", showError);
-  submit.addEventListener("click", changePicture);
+  search.addEventListener("keypress", readRequest);
   galleryContainer.addEventListener("click", viewPicture);
+  submit.addEventListener("click", function () {
+    if (search.value.length == 0) {
+      searchError.textContent = `Enter something, please!`;
+    } else {
+      changePicture();
+    }
+  });
 }
