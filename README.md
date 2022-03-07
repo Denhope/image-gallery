@@ -9,7 +9,7 @@ This project has been created using **webpack-cli**.
 git clone git@github.com:Denhope/image-gallery.git
 
 # Go to the app:
-cd memo-game
+cd image-gallery
 
 # Install dependencies:
 npm install
