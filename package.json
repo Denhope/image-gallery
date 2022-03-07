@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "image-gallery",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "type": "git",
     "url": ""
   },
-  "author": "",
+  "author": "Denis Kovalchuk",
   "license": "ISC",
   "bugs": {},
   "homepage": "",
