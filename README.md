@@ -30,4 +30,5 @@ npm run prod
 npm run dev
 ```
 
-## You can use my App: https://denhope-imagegalery.netlify.app/
+## You can use my App: 
+https://denhope-imagegalery.netlify.app/
